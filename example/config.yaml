@@ -1,7 +1,7 @@
 name: "AlarmServer"
-description: "My first real add-on!"
-version: "1.0.0"
-slug: "example"
+description: "AlarmServer+FTP HA addon"
+version: "1.0.1"
+slug: "AlarmServer"
 advanced: true
 arch:
   - aarch64
@@ -10,11 +10,10 @@ arch:
   - armv7
   - i386
 hassio_api: true
-hassio_role: manager  
+hassio_role: manager
 #ingress: true
 init: false  
-  
-  
+
 startup: before
 ports:
   15002/tcp: 15002
@@ -23,9 +22,9 @@ ports:
 map:
   - config:rw
 options:
-  debug: false  
+  debug: false
   hisilicon:
-   - enabled: false  
+   - enabled: false
      port: 15002
   mqtt:
    - enabled: true
@@ -39,19 +38,19 @@ options:
      port: 21
      password: "root"
      allowFiles: true
-     rootPath: "./ftp"   
+     rootPath: "./ftp"
 schema:
-  debug: bool 
+  debug: bool
   hisilicon:
-   - enabled: bool  
+   - enabled: bool
      port: int
   mqtt:
-   - enabled: bool 
+   - enabled: bool
      username: str
      password: str
      port: int
      server: str
-     topicroot: str   
+     topicroot: str
   ftp:
    - enabled: bool
      port: int
